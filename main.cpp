@@ -17,7 +17,7 @@ void FillArray( int data[], int size, int start, int step)
 
     for (int i = 0; i < size; i ++)
        {
-        //assert (0 < i   && i   <  size);
+        assert (0 < i   && i   <  size);
         //assert (0 < i-1 && i-1 <  size);
 
         data[i] = i; //data[i-1] + i*step;
