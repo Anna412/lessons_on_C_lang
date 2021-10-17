@@ -1,4 +1,4 @@
- #include "Txlib.h"
+#include "Txlib.h"
 
 void PrintArray (int data[], int size);
 void FillArray  (int data[], int size,int start);
@@ -21,13 +21,9 @@ void FillArray( int data[], int size, int start)
        {
         assert (0 <= i   && i   <  size);
 
-        if ((i+1) % 6 == 0 or (i+2) % 6 == 0 or (i+3) % 6 == 0)
+        if ((i+1)%4!=0)  data[i] = 1+i%4;
 
-        data[i] = 3 - i % 3;
-
-        else
-
-        data[i] = 1 + i % 3;
+        else data[i] = 2;
 
         }
     }
@@ -38,7 +34,7 @@ void PrintArray ( int data[], int size)
         if (i % 5 == 0)  printf ("\n");
 
         $c; printf ("[%2d] = ",i);
-        $g; printf (" %2d",    data[i]);
+        $g; printf (" %3d",    data[i]);
         $c; printf (", ");
 
         }

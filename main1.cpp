@@ -1,19 +1,19 @@
 #include "Txlib.h"
 
 void PrintArray (int data[], int size);
-void FillArray  (int data[], int size,int start, int step);
+void FillArray  (int data[], int size,int start);
 
 int main ()
     {
     int data [20] = {};
 
-    FillArray  (data, 20, 0, 10);
+    FillArray  (data, 20, 0);
     PrintArray (data, 20);
 
     printf ("\n");
     return 0;
     }
-void FillArray( int data[], int size, int start, int step)
+void FillArray( int data[], int size, int start)
     {
     data[0]=start;
 
@@ -21,7 +21,8 @@ void FillArray( int data[], int size, int start, int step)
        {
         assert (0 <= i   && i   <  size);
 
-        data[i] = 1+i % 3;
+        data[i] = 1 + i % 3;
+
         }
     }
 void PrintArray ( int data[], int size)
@@ -31,7 +32,7 @@ void PrintArray ( int data[], int size)
         if (i % 5 == 0)  printf ("\n");
 
         $c; printf ("[%2d] = ",i);
-        $g; printf (" %3d",    data[i]);
+        $g; printf (" %d",     data[i]);
         $c; printf (", ");
 
         }
